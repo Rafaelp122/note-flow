@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap-icons/bootstrap-icons.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/base-styles.css' %}">
 
-    <script>
-        document.documentElement.setAttribute(
-            "data-bs-theme",
-            localStorage.getItem("theme") || "light"
-        );
-    </script>
+    <script src="{% static 'js/theme.js' %}"></script>
 
     <title>{% block title %}{% endblock title %} | NoteFlow </title>
 
@@ -33,21 +28,4 @@
 
     <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
 
-    <script>
-        const btn = document.getElementById("theme-toggle");
-        const icon = document.getElementById("theme-icon");
-
-        // Inicializa ícone de acordo com o tema atual
-        const currentTheme = document.documentElement.getAttribute("data-bs-theme") || "light";
-        icon.className = currentTheme === "light" ? "bi bi-moon-fill" : "bi bi-sun-fill";
-
-        btn.addEventListener("click", () => {
-            const current = document.documentElement.getAttribute("data-bs-theme") || "light";
-            const next = current === "light" ? "dark" : "light";
-
-            document.documentElement.setAttribute("data-bs-theme", next);
-            icon.className = next === "light" ? "bi bi-moon-fill" : "bi bi-sun-fill";
-            localStorage.setItem("theme", next);
-        });
-    </script>
 </body>
