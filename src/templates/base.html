@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/base-styles.css' %}">
 
     <title>{% block title %}{% endblock title %} | NoteFlow </title>
+
+    {% block page_style %}{% endblock page_style %}
 </head>
 <body>
     {% include "partials/header.html" %}
