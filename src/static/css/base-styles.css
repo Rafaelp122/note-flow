@@ -1,3 +1,22 @@
-.navbar {
-    
+[data-bs-theme="light"] {
+    --bs-body-bg: #fdfdfd;
+    --bs-body-color: #222;
+    --bs-primary: #0066cc;
+    --bs-secondary: #666;
+    --bs-border-color: #ddd;
+}
+
+[data-bs-theme="dark"] {
+    --bs-body-bg: #0f1115;
+    --bs-body-color: #e6eef8;
+    --bs-primary: #58a6ff;
+    --bs-secondary: #9aa6b2;
+    --bs-border-color: #333;
+}
+
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
 }
