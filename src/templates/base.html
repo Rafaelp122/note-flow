@@ -3,14 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="{% static 'css/bootstrap/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-icons/bootstrap-icons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base-styles.css' %}">
-
-    <script src="{% static 'js/theme.js' %}"></script>
+    {% include "partials/head.html" %}
 
     <title>{% block title %}{% endblock title %} | NoteFlow </title>
 
@@ -20,12 +13,14 @@
 <body>
     {% include "partials/header.html" %}
 
-    {% block content %}{% endblock content %}
-
+    <main class="container {% block page_class %}{% endblock page_class %}">
+        {% block content %}{% endblock content %}
+    </main>
+    
     <button id="theme-toggle" class="btn btn-primary">
         <i class="bi bi-moon-fill" id="theme-icon"></i>
     </button>
 
     <script src="{% static 'js/bootstrap/bootstrap.bundle.min.js' %}"></script>
-
+    <script src="{% static 'js/theme.js' %}"></script>
 </body>

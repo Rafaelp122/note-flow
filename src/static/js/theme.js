@@ -1,7 +1,3 @@
-// Recupera tema do localStorage ou usa 'light'
-const storedTheme = localStorage.getItem("theme") || "light";
-document.documentElement.setAttribute("data-bs-theme", storedTheme);
-
 // Função para alternar tema e atualizar ícone
 function toggleTheme(iconElement) {
     const current = document.documentElement.getAttribute("data-bs-theme");
@@ -16,8 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.getElementById("theme-toggle");
     const icon = document.getElementById("theme-icon");
 
-    // Define ícone inicial
-    icon.className = storedTheme === "light" ? "bi bi-moon-fill" : "bi bi-sun-fill";
+    if (btn && icon) {
+        // Define o ícone inicial com base no tema que já foi carregado
+        const initialTheme = document.documentElement.getAttribute("data-bs-theme");
+        icon.className = initialTheme === "light" ? "bi bi-moon-fill" : "bi bi-sun-fill";
 
-    btn.addEventListener("click", () => toggleTheme(icon));
+        // Adiciona o evento de clique
+        btn.addEventListener("click", () => toggleTheme(icon));
+    }
 });
