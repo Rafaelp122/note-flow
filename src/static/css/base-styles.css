@@ -2,13 +2,14 @@
 :root {
     --bs-body-bg: #fdfdfd;
     --bs-body-color: #222;
-    --bs-primary: #0066cc;
+    --bs-primary: #cc0000;
     --bs-primary-rgb: 0, 102, 204;
     --bs-secondary: #666;
     --bs-secondary-rgb: 102, 102, 102;
     --bs-border-color: #ddd;
     --bs-tertiary-bg: #f8f9fa; /* Fundo para componentes sutis (navbars, etc) */
     --bs-emphasis-color: #000;
+
 }
 
 [data-bs-theme="dark"] {
@@ -34,8 +35,4 @@
     right: 20px;
     z-index: 9999;
     border-radius: 100%;
-}
-
-.login {
-    border-radius: 0.5rem;
 }
