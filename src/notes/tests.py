@@ -1,5 +1,6 @@
 from django.test import TestCase
-from django.urls import reverse, resolve
+from django.urls import resolve, reverse
+
 from notes import views
 
 
@@ -10,7 +11,7 @@ class NoteTests(TestCase):
 
     def test_notes_home_view_function_is_correct(self):
         view = resolve(reverse("notes:home"))
-        self.assertIs(view.func, views.home)
+        self.assertIs(view.func.view_class, views.HomeView)
 
     def test_notes_home_view_returns_status_code_200_OK(self):
         response = self.client.get(reverse("notes:home"))
