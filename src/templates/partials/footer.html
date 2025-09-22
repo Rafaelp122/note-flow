@@ -1,0 +1,47 @@
+<footer class="bg-body-tertiary text-center text-muted mt-auto pt-4 pb-4">
+
+    <div class="container pb-4">
+        <section class="mb-4">
+            <h4>NoteFlow</h4>
+            <p>
+                A study project to organize notes and ideas. Developed to improve 
+                skills in Django, Bootstrap, Automated Testing, and much more.
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="mb-4">
+            <ul class="list-inline">
+                <li class="list-inline-item mx-2">
+                    <a href="{% url 'notes:home' %}" class="text-muted">Home</a>
+                </li>
+                <li class="list-inline-item mx-2">
+                    <a href="{% url 'notes:about' %}" class="text-muted">About the project</a>
+                </li>
+                <li class="list-inline-item mx-2">
+                    <a href="{% url 'users:sign-up' %}" class="text-muted">Sign Up</a>
+                </li>
+                <li class="list-inline-item mx-2">
+                    <a href="{% url 'users:sign-in' %}" class="text-muted">Sign In</a>
+                </li>
+            </ul>
+        </section>
+        
+        <section>
+            <a class="btn btn-outline-secondary btn-floating m-1" href="https://github.com/Rafaelp122" role="button"
+                data-bs-toggle="tooltip" title="See the code on GitHub">
+                <i class="bi bi-github"></i>
+            </a>
+            <a class="btn btn-outline-secondary btn-floating m-1" href="https://www.linkedin.com/in/rafael-dev-python/" role="button"
+                data-bs-toggle="tooltip" title="My LinkedIn">
+                <i class="bi bi-linkedin"></i>
+            </a>
+        </section>
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2025 Copyright:
+        <a class="text-reset fw-bold" href="{% url 'notes:home' %}">NoteFlow Project</a>
+    </div>
+</footer>
