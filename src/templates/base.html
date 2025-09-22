@@ -13,13 +13,13 @@
 <body>
     {% include "partials/header.html" %}
 
+    {% include "partials/messages.html" %}
+
     <main class="container {% block page_class %}{% endblock page_class %}">
         {% block content %}{% endblock content %}
     </main>
     
-    <button id="theme-toggle" class="btn btn-primary">
-        <i class="bi bi-moon-fill" id="theme-icon"></i>
-    </button>
+    {% include "partials/theme_button.html" %}
 
     {% include "partials/footer.html" %}
 
