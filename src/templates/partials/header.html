@@ -1,18 +1,18 @@
 <header>
-    <nav class="navbar navbar-expand-sm border-bottom bg-body-tertiary">
+    <nav class="navbar navbar-expand-sm bg-body-tertiary">
         <div class="container ">
-            <a class="navbar-brand" href="#">NoteFlow</a>
+            <a class="navbar-brand" href="{% url 'notes:home' %}">NoteFlow</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Sobre o projeto</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'notes:home' %}">Home</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'notes:about' %}">About the project</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="#">Register</a>
-                <a class="btn btn-primary ms-2 login" href="#">Sign in</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'sign-up' %}active{% endif %}" href="{% url 'users:sign-up' %}">Sign Up</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'sign-in' %}active{% endif %}" href="{% url 'users:sign-in' %}">Sign In</a>
             </div>
             </div>
         </div>
