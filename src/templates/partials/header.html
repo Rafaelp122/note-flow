@@ -11,8 +11,8 @@
                 <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" href="{% url 'pages:about' %}">About the project</a>
             </div>
             <div class="navbar-nav ms-auto">
-                <a class="nav-link {% if request.resolver_match.url_name == 'sign-up' %}active{% endif %}" href="{% url 'users:sign-up' %}">Sign Up</a>
-                <a class="nav-link {% if request.resolver_match.url_name == 'sign-in' %}active{% endif %}" href="{% url 'users:sign-in' %}">Sign In</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'sign-up' %}active{% endif %}" href="{% url 'users:sign_up' %}">Sign Up</a>
+                <a class="nav-link {% if request.resolver_match.url_name == 'sign-in' %}active{% endif %}" href="{% url 'users:sign_in' %}">Sign In</a>
             </div>
             </div>
         </div>
