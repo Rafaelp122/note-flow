@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.notes.apps.NotesConfig',
     'apps.users.apps.UsersConfig',
     'apps.pages.apps.PagesConfig',
+    'apps.core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'note_flow.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR.parent / 'db.sqlite3',
     }
 }
 
