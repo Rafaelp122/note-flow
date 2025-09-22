@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #  meus apps
     'apps.notes.apps.NotesConfig',
     'apps.users.apps.UsersConfig',
+    'apps.pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
