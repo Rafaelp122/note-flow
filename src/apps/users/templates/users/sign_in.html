@@ -8,9 +8,13 @@
 {% block page_class %} sign-in-page {% endblock page_class %}
 
 {% block content %}
-  <div class="min-vh-100">
-    <h1>
-      Sign In
-    </h1>
+  <h1>
+    Sign In
+  </h1>
+
+  {% include "partials/forms.html" with button_text="Sign In" %}
+
+  <div class="mt-3">
+    <p>Don't have an account? <a href="{% url 'users:sign_up' %}">Sign up here</a>.</p>
   </div>
 {% endblock content %}

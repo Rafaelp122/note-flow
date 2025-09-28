@@ -9,7 +9,6 @@
     --bs-border-color: #ddd;
     --bs-tertiary-bg: #f8f9fa; /* Fundo para componentes sutis (navbars, etc) */
     --bs-emphasis-color: #000;
-
 }
 
 [data-bs-theme="dark"] {
