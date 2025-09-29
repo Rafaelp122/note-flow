@@ -60,8 +60,12 @@ class SignInForm(FormStylingMixin, AuthenticationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        add_placeholder(self.fields['username'], 'Enter your username')
+        add_placeholder(self.fields['username'], 'Enter your email')
         add_placeholder(self.fields['password'], 'Enter your password')
+
+    username = forms.EmailField(
+        label="E-mail",
+    )
 
 
 class CustomUserChangeForm(FormStylingMixin, UserChangeForm):

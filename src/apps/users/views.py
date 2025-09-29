@@ -10,7 +10,6 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     template_name = "users/sign_up.html"
     success_url = reverse_lazy("users:sign_in")
-    redirect_authenticated_user = True
 
     def form_valid(self, form):
         messages.success(

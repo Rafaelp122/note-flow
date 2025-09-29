@@ -10,12 +10,12 @@
     {% block page_style %}{% endblock page_style %}
 </head>
 
-<body>
+<body class="{% block page_body_class%}{% endblock page_body_class %}">
     {% include "partials/header.html" %}
 
     {% include "partials/messages.html" %}
 
-    <main class="container min-vh-100 {% block page_class %}{% endblock page_class %}">
+    <main class="container min-vh-100 {% block page_main_class %}{% endblock page_main_class %}">
         {% block content %}{% endblock content %}
     </main>
     

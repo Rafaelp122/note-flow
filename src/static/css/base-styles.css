@@ -35,3 +35,12 @@
     z-index: 9999;
     border-radius: 100%;
 }
+
+.gradient-bg {
+  /* Gradiente linear com ângulo de 135° */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-sign-in {
+    border: none;
+}

@@ -5,16 +5,26 @@
 
 {% block page_style %} {% endblock page_style %}
 
-{% block page_class %} sign-in-page {% endblock page_class %}
+{% block page_body_class %} gradient-bg {% endblock page_body_class %}
+
+{% block page_main_class %} sign-in-page {% endblock page_main_class %}
 
 {% block content %}
-  <h1>
-    Sign In
-  </h1>
+  
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card p-3 card-sign-in" style="width: 28rem; max-width: 100%;">
+      <div class="card-body">
+        <div class="text-center mb-4">
+          <h1 class="card-title">NoteFlow</h1>
+          <p class="card-text">Acesse sua conta para gerenciar suas anotações</p>
+        </div>
 
-  {% include "partials/forms.html" with button_text="Sign In" %}
+        {% include "partials/forms.html" with button_text="Sign In" field_wrapper_class="col-md-12" %}
 
-  <div class="mt-3">
-    <p>Don't have an account? <a href="{% url 'users:sign_up' %}">Sign up here</a>.</p>
+        <div class="mt-3 text-center">
+          <p>Don't have an account? <a href="{% url 'users:sign_up' %}">Sign up here</a>.</p>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock content %}
