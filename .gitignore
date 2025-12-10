@@ -127,4 +127,11 @@ _local_settings.py
 gunicorn-error-log
 db.sqlite3
 db copy.sqlite3
-/static/
+/staticfiles/
+
+# --- NODE.JS / TAILWIND ---
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm/
+static/css/output.css
