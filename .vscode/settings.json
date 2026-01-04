@@ -1,32 +1,24 @@
 {
-  // Zoom da janela
+  // --- Interface e Geral ---
   "window.zoomLevel": 0,
+  "liveServer.settings.port": 5501,
 
-  // Pylance e análise estática
+  // --- Python: Pylance e Análise Estática ---
   "python.languageServer": "Pylance",
   "python.analysis.typeCheckingMode": "basic",
-
-  // Testes (pytest como runner padrão na raiz)
-  "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": ["."],
-
-  // Linters e type-checkers
-  "python.linting.flake8Enabled": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.pylintArgs": [
-    "--load-plugins=pylint_django",
-    "--errors-only"
-  ],
-
-  // Formatação e intérprete
-  "python.formatting.autopep8Args": ["--indent-size=4"],
   "python.defaultInterpreterPath": "venv/bin/python",
 
-  // mypy daemon no venv do projeto
-  // "mypy.dmypyExecutable": "/home/rafael/Projetos/projetos_django/curso_projeto_django1/venv/bin/dmypy",
+  // --- Testes (Pytest) ---
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "."
+  ],
 
-  // Preferências do editor por linguagem
+  // --- Formatação e Linting Moderno ---
+  // Nota: Recomenda-se o uso das extensões oficiais (Black, Flake8, Mypy) 
+  // que substituem as definições legadas "python.linting.*"
+  "python.formatting.provider": "none", 
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
     "editor.tabSize": 4,
@@ -37,18 +29,40 @@
       "source.organizeImports": "explicit"
     }
   },
+
+  // --- Tailwind CSS v4 e Django HTML ---
+  // Garante que o Autocomplete do Tailwind funcione em templates Django
+  "tailwindCSS.includeLanguages": {
+    "django-html": "html",
+    "plaintext": "html"
+  },
+  // Permite que o Tailwind detete classes dentro de ficheiros Python (Views/Forms)
+  "tailwindCSS.experimental.classRegex": [
+    ["class\": \"([^\"]*)", "([a-zA-Z0-9\\- ]+)"]
+  ],
+
+  // --- Configurações de HTML e Django Templates ---
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.formatOnSave": true,
-    "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
   },
   "[django-html]": {
+    // Recomenda-se a extensão "djLint" para formatar Django HTML sem quebrar as tags
     "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.formatOnSave": false,
-    "editor.quickSuggestions": { "other": true, "comments": true, "strings": true }
+    "editor.formatOnSave": false, // Evita que o formatador padrão de HTML estrague tags Django
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    }
   },
 
-  // Associações de arquivos e linguagens
+  // --- Associações de Ficheiros ---
   "files.associations": {
     "**/templates/**/*.html": "django-html",
     "**/base_templates/**/*.html": "django-html",
@@ -57,15 +71,15 @@
     "*.svg": "html",
     "*.js": "javascript",
     "*.jsx": "javascriptreact",
-    "django-html": "html",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
 
-  // Emmet nos templates Django
+  // --- Emmet (Atalhos de Código) ---
   "emmet.includeLanguages": {
     "django-html": "html",
-    "javascript": "javascriptreact",
-    "javascriptreact": "javascriptreact"
+    "javascript": "javascriptreact"
   },
-  "liveServer.settings.port": 5501
+  "emmet.syntaxProfiles": {
+    "django-html": "html"
+  }
 }
