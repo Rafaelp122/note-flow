@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for note in notes %}
+				<a href="#" class="bg-neutral-primary-soft block max-w-sm p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium">
+					<h5 class="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8">{{ note.title }}</h5>
+					<p class="text-body line-clamp-4 break-all">
+						{{ note.content }}
+					</p>
+				</a>
+      {% empty %}
+        <div class="col-span-full py-12 text-center">
+          <p class="text-gray-400 text-lg">Nenhuma nota encontrada. Que tal criar uma?</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
