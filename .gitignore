@@ -134,4 +134,4 @@ node_modules/
 npm-debug.log
 yarn-error.log
 .npm/
-static/css/output.css
+src/static/css/output.css
