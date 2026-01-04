@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/Rafaelp122/note-flow#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.22",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.16"
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "flowbite": "^4.0.1"
   }
 }
