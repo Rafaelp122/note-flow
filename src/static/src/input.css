@@ -1,3 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Importa o motor do Tailwind v4 */
+@import "tailwindcss";
+
+/* Configura o tema do Flowbite (Baseado na documentação do Flowbite) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "flowbite/src/themes/default";
+
+/* Ativa o plugin do Flowbite v4 */
+@plugin "flowbite/plugin";
+
+/* Indica onde estão os arquivos do Flowbite e templates Django */
+@source "../../../node_modules/flowbite";
+@source "../../templates/**/*.html";
+@source "../../apps/**/*.py";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+  
+  /* BACKGROUND */
+  --color-bg: #f9fafb;
+  --color-bg-dark: #030712;
+
+  /* SURFACE */
+  --color-surface: #ffffff;
+  --color-surface-soft: #f3f4f6;
+  --color-surface-dark: #111827;
+  --color-surface-soft-dark: #1f2937;
+
+  /* BORDER */
+  --color-border: #e5e7eb;
+  --color-border-dark: #374151;
+
+  /* TEXT */
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+  --color-text-dark: #f9fafb;
+  --color-text-muted-dark: #9ca3af;
+
+  /* STATE */
+  --color-error: #ef4444;
+}
+
+.dark {
+  --color-surface: theme(colors.gray.900);
+  --color-card: theme(colors.gray.800);
+
+  --color-heading: theme(colors.gray.100);
+  --color-body: theme(colors.gray.400);
+
+  --color-border-default: theme(colors.gray.700);
+}
