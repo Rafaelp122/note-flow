@@ -1,0 +1,18 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+	{% for note in notes %}
+	<a href="#" class="bg-neutral-primary-soft dark:bg-gray-800 block h-full p-6 border border-default rounded-base shadow-xs hover:bg-neutral-secondary-medium">
+		<h5 class="mb-3 text-2xl font-semibold tracking-tight text-heading leading-8">{{ note.title }}</h5>
+		<p class="text-body line-clamp-6 break-all">
+		{{ note.content }}
+		</p>
+
+		<p class="mt-2 text-shadow-body-subtle line-clamp-6 break-all">
+		{{ note.created_at }}
+		</p>
+	</a>
+	{% empty %}
+	<div class="col-span-full py-12 text-center">
+		<p class="text-gray-400 text-lg">Nenhuma nota encontrada. Que tal criar uma?</p>
+	</div>
+	{% endfor %}
+</div>

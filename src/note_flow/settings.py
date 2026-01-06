@@ -109,7 +109,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'users.User'
 
-LOGIN_REDIRECT_URL = 'pages:home'
+LOGIN_REDIRECT_URL = 'notes:notes_list'
+LOGIN_URL = "users:sign_in"
 
 
 

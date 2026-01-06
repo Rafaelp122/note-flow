@@ -1,0 +1,14 @@
+{% if field.field.widget.input_type != 'hidden' %}
+<div class="mb-4">
+    <label for="{{ field.id_for_label }}" class="block mb-2.5 text-sm font-medium text-heading">
+        {{ field.label }}
+    </label>
+    {{ field }}
+    {% if field.errors %}
+        <p class="mt-1 text-xs text-red-600">{{ field.errors.0 }}</p>
+    {% endif %}
+    {% if field.help_text %}
+        <p class="mt-1 text-xs text-body">{{ field.help_text }}</p>
+    {% endif %}
+</div>
+{% endif %}
